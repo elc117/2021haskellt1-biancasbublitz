@@ -2,7 +2,7 @@
 -- Bianca Sabrina Bublitz
 
 -------------------------------------------------------------------------------
--- Arquivo de Funções
+-- ARQUIVO DE FUNÇÕES
 -------------------------------------------------------------------------------
 
 module Funcoes where
@@ -11,6 +11,8 @@ import Text.Printf
 
 -- Definição do tipo Circle
 type Circle    = ((Int,Int),Int)
+
+
 
 -------------------------------------------------------------------------------
 -- Funções para Interface

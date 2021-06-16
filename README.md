@@ -1,8 +1,8 @@
 Avaliação 01 - Bianca Sabrina Bublitz
 
-Readme
+README
 
---
+
 * Introdução
 --
 
@@ -12,7 +12,7 @@ Iniciei o estudo para o trabalho com as atividades que já havia realizado em au
 
 Por último, implementei uma interface com informações ao usuário, comentei todo o código, para melhor entendimento, e dividi as funções em dois arquivos: o Main.hs, com a função principal, e o Funcoes.hs que possuem as funções auxiliares ao Main.
 
---
+
 * Uso do programa
 --
 
@@ -27,9 +27,10 @@ Essa imagem terá n circunferências de círculos, onde n será calculado confor
 
 A imagem gerada com altura = 500, largura = 500, raio do primeiro círculo = 10 e cor aleatória = 5 é a que está neste repositório com o nome "exemplo.sgv"
 
---
+
 * Créditos
 --
+
   Conteúdos acessados para realização do trabalho:
 
 1. Exercícios anteriores desta disciplina (https://github.com/AndreaInfUFSM/elc117-2021a);

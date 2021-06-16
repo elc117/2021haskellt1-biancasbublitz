@@ -32,14 +32,14 @@ A imagem gerada com altura = 500, largura = 500, raio do primeiro círculo = 10 
 --
   Conteúdos acessados para realização do trabalho:
 
-1. Exercícios anteriores desta disciplina.
+1. Exercícios anteriores desta disciplina (https://github.com/AndreaInfUFSM/elc117-2021a);
 
-2. Links disponibilizados pela professora (https://www.w3schools.com/graphics/svg_intro.asp) (http://learnyouahaskell.com/starting-out#tuples)
+2. Links disponibilizados pela professora (https://www.w3schools.com/graphics/svg_intro.asp) (http://learnyouahaskell.com/starting-out#tuples);
 
 3. Material da Universidade Federal de Ouro Preto (http://www.facom.ufu.br/~madriana/PF/IOHaskell.pdf
-) (http://www.decom.ufop.br/romildo/2017-2/bcc222/slides/progfunc.pdf) (http://www.facom.ufu.br/~madriana/PF/AulaCap6.pdf)
+) (http://www.decom.ufop.br/romildo/2017-2/bcc222/slides/progfunc.pdf) (http://www.facom.ufu.br/~madriana/PF/AulaCap6.pdf);
 
 4. Conteúdo sobre entradas e saídas em Haskell (Haskell/Entradas e saídas simples - Wikilivros
-https://pt.wikibooks.org/wiki/Haskell/Entradas_e_sa%C3%ADdas_simples)
+https://pt.wikibooks.org/wiki/Haskell/Entradas_e_sa%C3%ADdas_simples);
 
-5. Conteúdo sobre SVG (https://maujorsvg.com.br/formas-basicas/circulo.php)
+5. Conteúdo sobre SVG (https://maujorsvg.com.br/formas-basicas/circulo.php);

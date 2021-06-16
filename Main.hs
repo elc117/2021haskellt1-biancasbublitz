@@ -6,54 +6,75 @@ import Text.Printf
 type Circle    = ((Int,Int),Int)
 
 -------------------------------------------------------------------------------
+-- Funções para Interface
+-------------------------------------------------------------------------------
+
+-- Imprime instruções na tela
+interfaceInicial :: IO()
+interfaceInicial = do
+  putStrLn "--------------------------------------------------------------------------------------------------------------"
+  putStrLn "                                    (:   BEM VINDO(A) TERRAQUEO(A)   :)                                       "
+  putStrLn "                         este eh um programa de geracao de imagens com arte generativa                         "
+  putStrLn "--------------------------------------------------------------------------------------------------------------"
+  putStrLn " "
+  putStrLn "  -> Ao final da execucao iremos gerar um imagem no formato .svg com o tamanho que voce escolher"
+  putStrLn "  -> Neste caso, nosso programa ira trabalhar com circulos"
+  putStrLn "  Bora comecar?! Pra isso vou te pedir algumas informacoes"
+  putStrLn " "
+
+-- Imprime o final
+interfaceFinal :: IO()
+interfaceFinal = do
+  putStrLn " "
+  putStrLn " ... "
+  putStrLn " Hmmm, perai, to montando aqui"
+  putStrLn " "
+  putStrLn "  YAY, TUA IMAGEM TA PRONTINHA :)"
+  putStrLn "  Ja gerei o arquivo pra ti, e tu pode visualizar como ficou tua arte generativa acessando o arquivo 'arte_legalzona.svg' "
+  putStrLn " "
+  putStrLn " Ate maissss terraqueo(a), foi um prazer te receber aqui"
+
+-------------------------------------------------------------------------------
 -- Funções auxiliares
 -------------------------------------------------------------------------------
 
 -- Le largura da imagem digitada pelo usuário
 leLarg :: IO(Int)
 leLarg = do 
- putStr "Digite a largura da imagem:  "
+ putStr "Digita pra mim a largura da imagem que tu quer (ex: 500):  "
  readLn
 
 -- Le altura da imagem digitada pelo usuário
 leAlt :: IO(Int)
 leAlt = do 
- putStr "Digite a altura da imagem:  "
+ putStr "Ok. Agora digita qual a altura da imagem (ex: 500):  "
  readLn
 
 -- Le raio dos circulos digitada pelo usuário
 leRaio :: IO(Int)
 leRaio = do 
- putStr "Digite o raio dos circulos:  "
+ putStr "Ta ficando legal! Mas agora me fala qual o tamanho do raio do primeiro circulo que tu quer (ex: 15):  "
  readLn
 
 -- Verifica, entre dois numeros, qual o menor
 menor :: Int -> Int -> Int
 menor x y = if x <= y then x else y
 
-
 -------------------------------------------------------------------------------
 -- Paletas
 -------------------------------------------------------------------------------
 
--- Paleta com n valores retirados de uma lista com sequências de R, G e B 
+-- Função que define a paleta de cores: recebe o numero de circulos e o raio, e cria valor em R, G e B 
 rgbPalette :: Int -> Int -> [(Int,Int,Int)]
 rgbPalette 0 r = []
 rgbPalette n r 
   | n <= 5 = (r^2, r , r) : rgbPalette (n-1) (r+1)
   | n <= 10 = (r, r^2 , r) : rgbPalette (n-1) (r+2)
   | n <= 15 = (r, r , r^2) : rgbPalette (n-1) (r+3)
-  | n <= 20 = (r, r , r) : rgbPalette (n-1) (r+4)
-  | n <= 30 = (r, r , r) : rgbPalette (n-1) (r+6)
-  | n <= 40 = (r, r , r) : rgbPalette (n-1) (r+8)
-  | otherwise = (r, r , r) : rgbPalette (n-1) (r+10)
-{-
-rgbPalette 20 r = (r^2, r , r^2) : rgbPalette (20-1) (r+2)
-rgbPalette n r = (r, r , r) : rgbPalette (n-1) (r+8)-}
-
-semVogais (x:xs)
-   | elem x "aeiou" = semVogais xs
-   | otherwise      = x : semVogais xs
+  | n <= 20 = (r, r , r) : rgbPalette (n-1) (r+8)
+  | n <= 30 = (r, r , r) : rgbPalette (n-1) (r+12)
+  | n <= 40 = (r, r , r) : rgbPalette (n-1) (r+16)
+  | otherwise = (r, r , r) : rgbPalette (n-1) (r+20)
 
 -------------------------------------------------------------------------------
 -- Geração de circulos em suas posições
@@ -103,6 +124,7 @@ svgElements func (x:xs) (y:ys) = concat $ zipWith func [x] [y] : [svgElements fu
 
 main :: IO ()
 main = do
+  interfaceInicial
   larg <- leLarg
   alt <- leAlt
   raio <- leRaio
@@ -113,5 +135,6 @@ main = do
       circs = genCircs (geraUmCirc ponto raio) numCircs raio
       svgfigs = svgElements svgCirc circs (map svgStyle palette)
       svgstrs = concat ([svgInicial larg alt] ++ (svgfigs) ++ [svgFinal])
-   in writeFile "img.svg" svgstrs
+   in writeFile "arte_legalzona.svg" svgstrs
+  interfaceFinal
   

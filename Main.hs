@@ -4,7 +4,7 @@
 import Funcoes
 
 -------------------------------------------------------------------------------
--- Função principal que gera arquivo com imagem SVG
+-- Arquivo com função principal que gera arquivo com imagem SVG
 -------------------------------------------------------------------------------
 
 main :: IO ()
